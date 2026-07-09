@@ -88,7 +88,26 @@
     { sel: '.case-study-info-wrapper .label', key: 'case.label'    },
     { sel: '.case-study-info-wrapper p',      key: 'case.body'     }, // 2 pasusa, isti key
     { sel: '.w-form-done > div',              key: 'form.success'  },
-    { sel: '.w-form-fail > div',              key: 'form.fail'     }
+    { sel: '.w-form-fail > div',              key: 'form.fail'     },
+    // Film kartice - staticni chrome, isti na svakoj kartici
+    { sel: '.film-info-wrap > div:first-child', key: 'film.thickness' },
+    { sel: '.pick-color',                       key: 'film.pickColor' }
+  ];
+
+  // 4) INDEXED: kartice su Webflow komponenta (nema CMS-a), pa se mapiraju
+  //    po redosledu na stranici - ali sa EKSPLICITNIM imenima key-eva,
+  //    ne film1/film2. Ako promenis redosled kartica u Designer-u,
+  //    promeni redosled u `bases` (jedna linija).
+  const INDEXED = [
+    {
+      container: '.film-item',
+      bases: ['film.gloss', 'film.matte', 'film.satin', 'film.colorshift'],
+      fields: [
+        { sel: '.film-label',   suffix: '.label' },
+        { sel: '.film-heading', suffix: '.head'  },
+        { sel: '.finish-info',  suffix: '.body'  }
+      ]
+    }
   ];
 
   // Postavi atribut samo ako ga vec nema (eksplicitno pobedjuje).
@@ -123,10 +142,23 @@
     });
   };
 
+  const runIndexed = () => {
+    INDEXED.forEach(({ container, bases, fields }) => {
+      document.querySelectorAll(container).forEach((box, i) => {
+        const base = bases[i];
+        if (!base) return;                       // vise kartica nego key-eva -> preskoci
+        fields.forEach(({ sel, suffix, html }) => {
+          tag(box.querySelector(sel), base + suffix, html);
+        });
+      });
+    });
+  };
+
   const run = () => {
     runFlat();
     runBlocks();
     runDirect();
+    runIndexed();
     // Ako je engine vec primenio pre nas, forsiraj re-apply da uhvati nove atribute.
     if (window.dmI18n && typeof window.dmI18n.refresh === 'function') {
       window.dmI18n.refresh();
