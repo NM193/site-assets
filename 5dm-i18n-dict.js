@@ -93,6 +93,27 @@ window.DM_I18N = {
     'faq.q5': 'Beschädigt eine Folierung den Originallack?',
     'faq.a5': 'Nein. Eine professionelle Folierung beschädigt den Werkslack nicht, wenn sie korrekt appliziert und wieder entfernt wird. Im Gegenteil, sie kann den Originallack vor leichten Kratzern, UV-Strahlung und alltäglichem Verschleiss schützen. Wurde das Fahrzeug jedoch schlecht nachlackiert oder ist der Lack bereits beschädigt, kann die Entfernung heikler sein.',
 
+    // Film-Karten — statischer Rahmen (auf jeder Karte gleich)
+    'film.thickness': 'DICKE',
+    'film.pickColor': 'FARBE WÄHLEN',
+
+    // Film-Karten — Inhalt (Schlüssel kommt aus dem CMS-Feld "i18n Key")
+    'film.gloss.label': 'Glanz-Finish',
+    'film.gloss.head': 'Glänzend',
+    'film.gloss.body': 'Ein hochglänzendes, spiegelähnliches Finish, das die Werkslinien und die Farbtiefe deines Fahrzeugs verstärkt. Pflegeleicht und beständig gegen UV-Ausbleichen.',
+
+    'film.matte.label': 'Matt-Finish',
+    'film.matte.head': 'Matt',
+    'film.matte.body': 'Eine matte, nicht reflektierende Oberfläche mit modernem, zurückhaltendem Auftritt. Verbirgt kleine Unebenheiten und Swirls besser als glänzende Finishes.',
+
+    'film.satin.label': 'Satin-Finish',
+    'film.satin.head': 'Satin',
+    'film.satin.body': 'Der Mittelweg zwischen Glanz und Matt – ein weicher, seidiger Schimmer mit dezenter Tiefe. Ein edler Auftritt, der pflegeleichter ist als Vollglanz.',
+
+    'film.colorshift.label': 'Farbwechsel-Finish',
+    'film.colorshift.head': 'Farbwechselnd',
+    'film.colorshift.body': 'Ein dynamisches Finish, das je nach Lichteinfall und Blickwinkel den Farbton wechselt. Macht jede Fahrt zum Statement.',
+
     // Kontakt
     'contact.title': 'Termin buchen.',
     'contact.intro': 'Erzähl uns vom Fahrzeug. Wir antworten innerhalb von 24 Stunden mit einem Vorschlag und einem Termin.',
@@ -203,6 +224,27 @@ window.DM_I18N = {
     'faq.a4': 'A high-quality wrap usually lasts between 3 and 7 years, depending on the film, maintenance, weather exposure, and how often the car is washed. Garage-kept cars and properly maintained wraps can last even longer.',
     'faq.q5': 'Does a wrap damage the original paint?',
     'faq.a5': 'No. A professional wrap does not damage factory paint when it is applied and removed correctly. In fact, it can help protect the original paint from light scratches, UV exposure, and everyday wear. However, if the car has been repainted poorly or the paint is already damaged, removal can be more sensitive.',
+
+    // Film cards — static chrome (identical on every card)
+    'film.thickness': 'THICKNESS',
+    'film.pickColor': 'PICK COLOR',
+
+    // Film cards — content (key comes from the CMS "i18n Key" field)
+    'film.gloss.label': 'Gloss finish',
+    'film.gloss.head': 'Glossy',
+    'film.gloss.body': "A high-shine, mirror-like finish that intensifies your car's factory lines and colour depth. Easy to maintain and built to resist UV fading.",
+
+    'film.matte.label': 'Matte finish',
+    'film.matte.head': 'Matte',
+    'film.matte.body': 'A flat, non-reflective surface with a modern, stealthy look. Hides minor imperfections and swirl marks better than gloss finishes.',
+
+    'film.satin.label': 'Satin finish',
+    'film.satin.head': 'Satin',
+    'film.satin.body': "The middle ground between gloss and matte — a soft, silky sheen with subtle depth. A premium look that's more forgiving to maintain than full gloss.",
+
+    'film.colorshift.label': 'Color shift finish',
+    'film.colorshift.head': 'Color - Changing',
+    'film.colorshift.body': 'A dynamic finish that shifts hue depending on light angle and viewing perspective. Turns every drive into a statement.',
 
     // Contact
     'contact.title': 'Book an appointment.',
