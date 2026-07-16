@@ -18,6 +18,7 @@ window.DM_I18N = {
     'nav.workshop': 'Werkstatt',
     'nav.gallery': 'Galerie',
     'nav.material': 'Material',
+    'nav.detailing': 'Detailing',
     'nav.process': 'Ablauf',
     'nav.contact': 'Kontakt',
 
@@ -97,7 +98,7 @@ window.DM_I18N = {
     'film.thickness': 'DICKE',
     'film.pickColor': 'FARBE WÄHLEN',
 
-    // Film-Karten — Inhalt (Schlüssel kommt aus dem CMS-Feld "i18n Key")
+    // Film-Karten — Inhalt (Reihenfolge via `bases` im Auto-Tagger)
     'film.gloss.label': 'Glanz-Finish',
     'film.gloss.head': 'Glänzend',
     'film.gloss.body': 'Ein hochglänzendes, spiegelähnliches Finish, das die Werkslinien und die Farbtiefe deines Fahrzeugs verstärkt. Pflegeleicht und beständig gegen UV-Ausbleichen.',
@@ -113,6 +114,23 @@ window.DM_I18N = {
     'film.colorshift.label': 'Farbwechsel-Finish',
     'film.colorshift.head': 'Farbwechselnd',
     'film.colorshift.body': 'Ein dynamisches Finish, das je nach Lichteinfall und Blickwinkel den Farbton wechselt. Macht jede Fahrt zum Statement.',
+
+    // Detailing
+    'detail.label': 'Detail',
+    'detail.h2': 'Detailing, das den Glanz zurückbringt',
+    'detail.p': 'Unser Detailing bringt den Innenraum deines Fahrzeugs in einen neuwertigen Zustand. Wir achten auf jedes Detail, damit du sauberer, frischer und komfortabler unterwegs bist.',
+
+    'detail.card1.title': 'Staubsaugen',
+    'detail.card1.body': 'Gründliches Aussaugen von Sitzen, Teppichen, Kofferraum und schwer zugänglichen Stellen.',
+
+    'detail.card2.title': 'Lederreinigung',
+    'detail.card2.body': 'Schonende Reinigung und Pflege, um Lederflächen aufzufrischen.',
+
+    'detail.card3.title': 'Innenraumreinigung',
+    'detail.card3.body': 'Abwischen aller Flächen, Verkleidungen und Zierleisten für ein frisches, sauberes Finish.',
+
+    'detail.card4.title': 'Finish',
+    'detail.card4.body': 'Letzte Handgriffe für einen makellosen und aufgefrischten Innenraum.',
 
     // Kontakt
     'contact.title': 'Termin buchen.',
@@ -150,6 +168,7 @@ window.DM_I18N = {
     'nav.workshop': 'Workshop',
     'nav.gallery': 'Gallery',
     'nav.material': 'Material',
+    'nav.detailing': 'Detailing',
     'nav.process': 'Process',
     'nav.contact': 'Contact',
 
@@ -229,7 +248,7 @@ window.DM_I18N = {
     'film.thickness': 'THICKNESS',
     'film.pickColor': 'PICK COLOR',
 
-    // Film cards — content (key comes from the CMS "i18n Key" field)
+    // Film cards — content (mapped by order via `bases` in the auto-tagger)
     'film.gloss.label': 'Gloss finish',
     'film.gloss.head': 'Glossy',
     'film.gloss.body': "A high-shine, mirror-like finish that intensifies your car's factory lines and colour depth. Easy to maintain and built to resist UV fading.",
@@ -245,6 +264,23 @@ window.DM_I18N = {
     'film.colorshift.label': 'Color shift finish',
     'film.colorshift.head': 'Color - Changing',
     'film.colorshift.body': 'A dynamic finish that shifts hue depending on light angle and viewing perspective. Turns every drive into a statement.',
+
+    // Detailing
+    'detail.label': 'Detail',
+    'detail.h2': 'Detailing that brings it back',
+    'detail.p': 'Our detailing service restores the inside of your vehicle to a like-new condition. We focus on every detail, so you can enjoy a cleaner, fresher, and more comfortable drive.',
+
+    'detail.card1.title': 'Vacuuming',
+    'detail.card1.body': 'Deep vacuum of seats, carpets, trunk, and hard-to-reach areas.',
+
+    'detail.card2.title': 'Leather Cleaning',
+    'detail.card2.body': 'Gentle cleaning and conditioning to restore leather surfaces.',
+
+    'detail.card3.title': 'Interior Cleaning',
+    'detail.card3.body': 'Wipe down of all surfaces, panels, and trims for a fresh, clean finish.',
+
+    'detail.card4.title': 'Detailing Finishing',
+    'detail.card4.body': 'Final touches to ensure a spotless and refreshed interior.',
 
     // Contact
     'contact.title': 'Book an appointment.',
