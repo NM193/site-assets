@@ -24,10 +24,6 @@
   // 1) FLAT liste: selektor -> key-evi po redosledu u DOM-u (text mode)
   const FLAT = [
     {
-      sel: '.nav-link',
-      keys: ['nav.workshop', 'nav.gallery', 'nav.material', 'nav.process', 'nav.contact']
-    },
-    {
       // tab labele u meniju (ugnjezdeni div u holderu)
       sel: '.disciplines-tab-link .discipline-tab-link-holder > div',
       keys: ['disc.tab1.label', 'disc.tab2.label', 'disc.tab3.label', 'disc.tab4.label']
@@ -41,6 +37,23 @@
       // PPF use-case celije (4 reda podataka)
       sel: '.film-comparison-wrap:not(.heading-fc) .film-wrap-text-h5 > div',
       keys: ['ppf.use.fullbody', 'ppf.use.matte', 'ppf.use.front', 'ppf.use.detail']
+    }
+  ];
+
+  // 1b) BY_HREF: mapiranje po href-u umesto po redosledu.
+  //     Nav linkovi nose svoj identitet (#detailing), pa premestanje ili
+  //     dodavanje linka NE lomi mapiranje. Nov link = jedan red ovde.
+  const BY_HREF = [
+    {
+      sel: '.nav-link',
+      map: {
+        '/':           'nav.workshop',
+        '#gallery':    'nav.gallery',
+        '#material':   'nav.material',
+        '#detailing':  'nav.detailing',
+        '#process':    'nav.process',
+        '#contact':    'nav.contact'
+      }
     }
   ];
 
@@ -67,6 +80,14 @@
         { sel: '.label', key: 'disc.tab{n}.label' },
         { sel: 'h3',     key: 'disc.tab{n}.head'  },
         { sel: 'p',      key: 'disc.tab{n}.body'  }
+      ]
+    },
+    {
+      // Detailing kartice (4x): naslov + opis
+      container: '.detail-info-card',
+      fields: [
+        { sel: '.text-20', key: 'detail.card{n}.title' },
+        { sel: 'p',        key: 'detail.card{n}.body'  }
       ]
     },
     {
@@ -117,6 +138,22 @@
     el.setAttribute(html ? 'data-i18n-html' : 'data-i18n', key);
   };
 
+  // '/#gallery' i '#gallery' -> isti kljuc; '/' ostaje '/'
+  const hrefKey = (href) => {
+    if (!href) return '';
+    const i = href.indexOf('#');
+    return i >= 0 ? href.slice(i) : href;
+  };
+
+  const runByHref = () => {
+    BY_HREF.forEach(({ sel, map, html }) => {
+      document.querySelectorAll(sel).forEach((el) => {
+        const key = map[hrefKey(el.getAttribute('href'))];
+        if (key) tag(el, key, html);
+      });
+    });
+  };
+
   const runFlat = () => {
     FLAT.forEach(({ sel, keys, html }) => {
       document.querySelectorAll(sel).forEach((el, i) => {
@@ -155,6 +192,7 @@
   };
 
   const run = () => {
+    runByHref();
     runFlat();
     runBlocks();
     runDirect();
